@@ -1,192 +1,411 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tk">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dünýäden — Türkmenistan</title>
+<title>Dünýäden | Daşary ýurtlardan önüm sargyt</title>
+
 <style>
-:root{--orange:#ff6a00;--orange2:#ff8a00;--ink:#222f3e;--muted:#697586;--line:#e8ebef;--bg:#f5f7fa}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:#fff;color:var(--ink);padding:15px max(4%,calc((100% - 1280px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.logo{font-size:25px;font-weight:900;letter-spacing:-.8px;color:#202b38}.logo:first-letter{color:var(--orange)}.lang{padding:10px;border:1px solid var(--line);border-radius:5px;background:white}
-.hero{padding:38px max(4%,calc((100% - 1280px)/2)) 34px;background:linear-gradient(115deg,#fff2e8,#fff 65%);color:var(--ink);border-bottom:1px solid #ffe2ce}
-.hero h1{font-size:clamp(28px,4vw,42px);margin:0 0 12px;letter-spacing:-1px}.hero p{max-width:700px;line-height:1.65;color:#586574;margin:0 0 22px}
-.search{display:flex;gap:0;max-width:760px;background:white;border:2px solid var(--orange);border-radius:5px;overflow:hidden}.search input{flex:1;min-width:0;padding:15px;border:0;margin:0;border-radius:0;font-size:16px;outline:none}.btn{border:0;border-radius:4px;padding:12px 17px;background:var(--orange);color:white;font-weight:700;cursor:pointer;transition:.15s}.btn:hover{background:#e85f00}.hero .btn{border-radius:0;padding:0 26px;background:var(--orange);color:white}
-main{max-width:1280px;margin:auto;padding:25px 4%}.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}.bar h2{margin:0;font-size:25px}.bar>div{display:flex;gap:8px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:5px;overflow:hidden;transition:box-shadow .18s,transform .18s}.card:hover{box-shadow:0 8px 24px #17202a16;transform:translateY(-2px)}.card img{width:100%;height:205px;object-fit:cover;background:#f0f2f4}.card-body{padding:15px}.card h3{font-size:16px;min-height:38px;margin:0 0 10px;font-weight:600}.price{font-size:22px;font-weight:800;color:var(--orange);margin:9px 0}.muted{color:var(--muted);font-size:13px}.card button{width:100%;margin-top:12px}
-.panel{background:white;padding:22px;border:1px solid var(--line);border-radius:6px;margin-top:25px}.panel h2{margin-top:0}
-input,textarea,select{width:100%;padding:12px;border:1px solid #d7dce0;border-radius:5px;margin:6px 0 12px;font:inherit}input:focus,textarea:focus,select:focus{outline:2px solid #ffd1b3;border-color:var(--orange)}
-.modal{display:none;position:fixed;inset:0;background:#17202a88;z-index:20;padding:20px;overflow:auto}.modal-box{background:white;max-width:540px;margin:40px auto;padding:24px;border-radius:8px;box-shadow:0 20px 60px #0003}.close{float:right;font-size:27px;cursor:pointer;color:#657181}.status{padding:7px 11px;background:#fff0e6;border-radius:3px;display:inline-block;color:#d95600}
-footer{text-align:center;padding:30px;color:#667;background:#fff;border-top:1px solid var(--line);margin-top:25px}
-@media(max-width:600px){header{padding:13px 4%}.logo{font-size:21px}.hero{padding:28px 4%}.search input{padding:12px;font-size:14px}.hero .btn{padding:0 15px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card img{height:145px}.card-body{padding:11px}.card h3{font-size:14px}.price{font-size:18px}.card .btn{padding:10px 7px;font-size:12px}main{padding:20px 4%}.bar h2{font-size:21px}}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.top{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  color:#ff6a00;
+  white-space:nowrap;
+}
+
+.logo span{
+  color:#222;
+}
+
+.search{
+  flex:1;
+  display:flex;
+  height:46px;
+  border:2px solid #ff6a00;
+  border-radius:5px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.search input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:0 15px;
+  font-size:15px;
+}
+
+.search button{
+  border:0;
+  background:#ff6a00;
+  color:white;
+  padding:0 22px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.cartBtn{
+  border:0;
+  background:#fff3eb;
+  color:#ff6a00;
+  padding:12px 15px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.nav{
+  background:#ff6a00;
+  color:white;
+}
+
+.navin{
+  max-width:1200px;
+  margin:auto;
+  padding:10px 16px;
+  display:flex;
+  gap:25px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.hero{
+  max-width:1200px;
+  margin:18px auto;
+  padding:38px 25px;
+  border-radius:10px;
+  background:linear-gradient(120deg,#fff3e8,#fff);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.hero h1{
+  margin:0 0 10px;
+  font-size:34px;
+}
+
+.hero p{
+  color:#666;
+  font-size:16px;
+}
+
+.hero button{
+  background:#ff6a00;
+  border:0;
+  color:white;
+  padding:13px 22px;
+  border-radius:5px;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 16px 40px;
+}
+
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:10px 0 20px;
+}
+
+.category{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:5px;
+  padding:11px 17px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.category:hover{
+  border-color:#ff6a00;
+  color:#ff6a00;
+}
+
+.title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0 15px;
+}
+
+.title h2{
+  margin:0;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.card{
+  background:#fff;
+  border-radius:7px;
+  overflow:hidden;
+  border:1px solid #e5e5e5;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 18px #0001;
+}
+
+.photo{
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fafafa;
+  font-size:70px;
+}
+
+.info{
+  padding:14px;
+}
+
+.name{
+  height:42px;
+  font-weight:bold;
+  line-height:21px;
+}
+
+.price{
+  color:#e65100;
+  font-size:21px;
+  font-weight:900;
+  margin:10px 0 4px;
+}
+
+.country{
+  font-size:12px;
+  color:#777;
+}
+
+.actions{
+  display:flex;
+  gap:7px;
+  margin-top:12px;
+}
+
+.actions button{
+  flex:1;
+  padding:10px 5px;
+  border-radius:4px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.add{
+  background:#fff;
+  border:1px solid #ff6a00;
+  color:#ff6a00;
+}
+
+.order{
+  background:#ff6a00;
+  border:1px solid #ff6a00;
+  color:white;
+}
+
+.empty{
+  text-align:center;
+  padding:50px;
+  color:#777;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0008;
+  z-index:50;
+}
+
+.modal{
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:min(430px,95%);
+  background:white;
+  padding:20px;
+  overflow:auto;
+}
+
+.modal h2{
+  margin-top:0;
+}
+
+.close{
+  float:right;
+  border:0;
+  background:#eee;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:20px;
+}
+
+.cartItem{
+  padding:13px 0;
+  border-bottom:1px solid #ddd;
+}
+
+.share{
+  width:100%;
+  padding:15px;
+  border:0;
+  background:#20a65a;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:5px;
+  margin-top:20px;
+}
+
+footer{
+  background:#222;
+  color:#aaa;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+}
+
+@media(max-width:850px){
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .top{
+    flex-wrap:wrap;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+  }
+}
+
+@media(max-width:500px){
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .photo{
+    height:145px;
+  }
+
+  .info{
+    padding:9px;
+  }
+
+  .name{
+    font-size:13px;
+  }
+
+  .price{
+    font-size:18px;
+  }
+
+  .hero{
+    padding:25px 18px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">🌍 DÜNÝÄDEN <span style="font-size:11px;color:#7b8794;font-weight:500;letter-spacing:1px">GLOBAL SHOPPING</span></div>
-  <select id="lang" class="lang" onchange="setLang()">
-    <option value="tk">Türkmençe</option><option value="ru">Русский</option>
-  </select>
+  <div class="top">
+
+    <div class="logo">
+      Dünýäden<span>.live</span>
+    </div>
+
+    <div class="search">
+      <input id="searchInput"
+             placeholder="Önüm gözle... mysal: telefon, egin-eşik, aýakgap">
+      <button onclick="searchProducts()">Gözle</button>
+    </div>
+
+    <button class="cartBtn" onclick="openCart()">
+      🛒 Sebet (<span id="cartCount">0</span>)
+    </button>
+
+  </div>
+
+  <div class="nav">
+    <div class="navin">
+      <span>☰ Kategoriýalar</span>
+      <span>Ýörite teklipler</span>
+      <span>Ýaňy gelenler</span>
+      <span>Daşary ýurt önümleri</span>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-  <h1 id="title">Dünýäniň önümleri — bir ýerde</h1>
-  <p id="subtitle">Halan önümiňizi tapyň, daşary ýurtdan sargyt ediň we Türkmenistana eltip bereliň.</p>
-  <div class="search">
-    <input id="search" placeholder="Önüm gözle..." oninput="renderProducts()">
-    <button class="btn" onclick="renderProducts()">Gözle</button>
+  <div>
+    <h1>Dünýäniň önümlerini bir ýerde tapyň</h1>
+    <p>
+      Hytaý, Türkiýe, ABŞ we beýleki ýurtlardan önüm saýlaň.
+      Bahalar önümiň ýerleşýän ýurdunyň walýutasynda görkezilýär.
+    </p>
+    <button onclick="document.getElementById('products').scrollIntoView()">
+      Önümlere seret
+    </button>
   </div>
+
+  <div style="font-size:90px">🌍📦</div>
 </section>
 
-<main>
-  <div class="bar">
-    <h2 id="productsTitle">Meşhur önümler</h2>
-    <div style="display:flex;gap:8px">
-      <button class="btn" onclick="openCart()">🛒 Sebet (<span id="cartCount">0</span>)</button>
-      <button class="btn" onclick="openAdmin()">⚙ Admin</button>
-    </div>
-  </div>
-  <div id="products" class="grid"></div>
+<div class="container">
 
-  <div class="panel">
-    <h2 id="how">Nädip işleýär?</h2>
-    <p>1️⃣ Önümi gözleýärsiňiz → 2️⃣ Bahasyny görýärsiňiz → 3️⃣ Sargyt berýärsiňiz → 4️⃣ Biz daşary ýurtdan getirýäris → 5️⃣ Türkmenistan-da size berýäris.</p>
-  </div>
-</main>
-
-<div id="cartModal" class="modal">
- <div class="modal-box">
-  <span class="close" onclick="closeModal('cartModal')">×</span>
-  <h2>🛒 Sebet</h2>
-  <div id="cartItems"></div>
-  <div id="cartTotal" style="font-size:20px;font-weight:800;margin:15px 0"></div>
-  <button class="btn" onclick="shareCart()">📲 +993 64 143613 belgisine paýlaş</button>
- </div>
-</div>
-
-<div id="orderModal" class="modal">
- <div class="modal-box">
-  <span class="close" onclick="closeModal('orderModal')">×</span>
-  <h2>Sargyt</h2>
-  <div id="selected"></div>
-  <input id="customer" placeholder="Adyňyz">
-  <input id="phone" placeholder="Telefon belgiňiz">
-  <textarea id="address" placeholder="Salgyňyz"></textarea>
-  <button class="btn" onclick="sendOrder()">Sargydy iber</button>
- </div>
-</div>
-
-<div id="adminModal" class="modal">
- <div class="modal-box">
-  <span class="close" onclick="closeModal('adminModal')">×</span>
-  <h2>Admin panel</h2>
-  <p class="muted">Demo sürüm: maglumatlar şu brauzerde saklanýar.</p>
-  <input id="aname" placeholder="Önüm ady">
-  <input id="aimage" placeholder="Surat URL-si">
-  <input id="aprice" type="number" placeholder="Bahasy (önümiň öz walýutasynda)">
-  <select id="acurrency"><option>USD</option><option>EUR</option><option>GBP</option><option>CNY</option><option>TRY</option><option>AED</option><option>RUB</option><option>PLN</option></select>
-  <input id="acountry" placeholder="Haryt haýsy ýurtdan? (mysal: ABŞ)">
-  <input id="aship" type="number" placeholder="Kargo TMT">
-  <input id="aprofit" type="number" placeholder="Hyzmat/kär TMT">
-  <button class="btn" onclick="addProduct()">Önüm goş</button>
-  <hr>
-  <h3>Sargytlar</h3>
-  <div id="orders"></div>
- </div>
-</div>
-
-<footer>© 2026 DÜNÝÄDEN — Türkmenistan</footer>
-
-<script>
-// Ürünün fiyatı, kaynağındaki para birimiyle gösterilir.
-const CURRENCY_SYMBOLS={USD:"$",EUR:"€",GBP:"£",CNY:"¥",TRY:"₺",AED:"د.إ",RUB:"₽",PLN:"zł"};
-function money(p){return `${CURRENCY_SYMBOLS[p.currency]||p.currency+" "} ${Number(p.price).toFixed(2)}`;}
-let products=JSON.parse(localStorage.getItem('products')||'null')||[
- {id:1,name:"Kablosuz kulaklık",currency:"USD",image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",price:25,ship:25,profit:20},
- {id:2,name:"Akıllı saat",currency:"EUR",image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",price:39,ship:30,profit:30},
- {id:3,name:"Telefon aksesuarı",currency:"CNY",image:"https://images.unsplash.com/photo-1609592424695-5c1c3d5f7b0b?auto=format&fit=crop&w=800&q=80",price:12,ship:20,profit:15}
-];
-let orders=JSON.parse(localStorage.getItem('orders')||'[]');
-let selectedProduct=null;
-let cart=JSON.parse(localStorage.getItem('cart')||'[]');
-
-function save(){localStorage.setItem('products',JSON.stringify(products));localStorage.setItem('orders',JSON.stringify(orders))}
-function total(p){return Number(p.price)+Number(p.ship||0)+Number(p.profit||0)}
-function sourcePrice(p){return money(p)}
-function renderProducts(){
- const q=document.getElementById('search').value.toLowerCase();
- const el=document.getElementById('products');
- const arr=products.filter(p=>p.name.toLowerCase().includes(q));
- el.innerHTML=arr.map(p=>`<article class="card">
- <img src="${p.image}" onerror="this.src='https://via.placeholder.com/600x400?text=Product'">
- <div class="card-body"><h3>${p.name}</h3>
- <div class="muted">Ýurt: ${p.country||"Daşary ýurt"}</div>
- <div class="price">${sourcePrice(p)}</div>
- <div class="muted">Daşary ýurtdan sargyt · Elýeterli saýlaw</div>
- <button class="btn" onclick="addToCart(${p.id})">🛒 Sebede goş</button></div></article>`).join('');
-}
-
-function saveCart(){localStorage.setItem('cart',JSON.stringify(cart));updateCartCount()}
-function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce((a,x)=>a+x.qty,0)}
-function addToCart(id){
- const p=products.find(x=>x.id===id);
- const item=cart.find(x=>x.id===id);
- if(item)item.qty++; else cart.push({id:p.id,qty:1});
- saveCart(); alert("Önüm sebede goşuldy.");
-}
-function openCart(){
- const el=document.getElementById('cartItems');
- if(!cart.length){el.innerHTML="<p>Sebet boş.</p>";document.getElementById('cartTotal').textContent="";document.getElementById('cartModal').style.display='block';return}
- let sum=0;
- el.innerHTML=cart.map(x=>{
-   const p=products.find(y=>y.id===x.id); const t=total(p)*x.qty;
-   return `<div style="padding:10px 0;border-bottom:1px solid #ddd"><b>${p.name}</b><br>${x.qty} sany × ${total(p)} TMT = ${t} TMT
-   <button class="btn" style="padding:6px 9px;margin-left:8px" onclick="removeFromCart(${p.id})">−</button></div>`;
- }).join('');
- document.getElementById('cartTotal').textContent="Her önümiň bahasy öz pul birliginde görkezilýär.";
- document.getElementById('cartModal').style.display='block';
-}
-function removeFromCart(id){
- const x=cart.find(y=>y.id===id);
- if(!x)return;
- x.qty--; if(x.qty<=0)cart=cart.filter(y=>y.id!==id);
- saveCart(); openCart();
-}
-function shareCart(){
- if(!cart.length){alert("Sebet boş.");return}
- let lines=["DÜNYÄDEN SARGYT"];
- let sum=0;
- cart.forEach(x=>{
-   const p=products.find(y=>y.id===x.id); const t=total(p)*x.qty;
-   lines.push(`${p.name} — ${x.qty} sany — ${money(p)}`);
- });
- lines.push("Jemi baha dürli walýutalar sebäpli aýratyn görkezilýär.");
- lines.push("Salam, şu önümleri sargyt etmek isleýärin.");
- const text=encodeURIComponent(lines.join("\n"));
- const wa=`https://wa.me/99364143613?text=${text}`;
- window.open(wa,"_blank");
-}
-
-function openOrder(id){selectedProduct=products.find(p=>p.id===id);document.getElementById('selected').innerHTML=`<p><b>${selectedProduct.name}</b><br>${total(selectedProduct)} TMT</p>`;document.getElementById('orderModal').style.display='block'}
-function sendOrder(){
- if(!customer.value||!phone.value){alert("Adyňyzy we telefon belgiňizi ýazyň.");return}
- orders.push({id:Date.now(),product:selectedProduct.name,total:total(selectedProduct),customer:customer.value,phone:phone.value,address:address.value,date:new Date().toLocaleString(),status:"Täze"});
- save(); closeModal('orderModal'); alert("Sargydyňyz kabul edildi!"); renderOrders();
-}
-function openAdmin(){document.getElementById('adminModal').style.display='block';renderOrders()}
-function closeModal(id){document.getElementById(id).style.display='none'}
-function addProduct(){
- const p={id:Date.now(),name:aname.value,image:aimage.value||"https://via.placeholder.com/600x400?text=Product",price:Number(aprice.value),currency:acurrency.value,country:acountry.value||"Daşary ýurt",ship:Number(aship.value),profit:Number(aprofit.value)};
- if(!p.name||!p.price){alert("Önüm ady we baha gerek.");return}
- products.push(p);save();renderProducts();updateCartCount();alert("Önüm goşuldy.");
-}
-function renderOrders(){
- document.getElementById('orders').innerHTML=orders.length?orders.map(o=>`<div class="panel"><b>${o.product}</b><br>${o.customer} — ${o.phone}<br>${o.total} TMT<br><span class="status">${o.status}</span></div>`).join(''):"Heniz sargyt ýok.";
-}
-function setLang(){
- if(lang.value==="ru"){title.textContent="Заказывайте товары из-за рубежа";subtitle.textContent="Найдите нужный товар. Мы поможем заказать его из другой страны и доставить в Туркменистан.";productsTitle.textContent="Товары";how.textContent="Как это работает?"}
- else{title.textContent="Ýurtdan önüm sargyt ediň";subtitle.textContent="Halan önümiňizi gözläň. Biz ony daşary ýurtdan tapyp, sargydyňyzy Türkmenistan-da eltip berýäris.";productsTitle.textContent="Önümler";how.textContent="Nädip işleýär?"}
-}
-renderProducts();
-</script>
-</body>
-</html>
+  <div class="categories">
+    <div class="category" onclick="filterCategory('all')">Ählisi</div>
+    <div class="category" onclick="filterCategory('Telefon')">📱 Telefon</div>
+    <div class="category" onclick="filterCategory('Elektronika')">💻 Elektronika</div>
+    <div class="category" onclick="filterCategory('Egin-eşik')">👕 E
